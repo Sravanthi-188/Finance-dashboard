@@ -42,7 +42,7 @@ export default function AddTransactionModal({ onClose, onAdd }) {
             </div>
           </div>
           <div>
-            <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1 transition-colors">Amount ($)</label>
+            <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1 transition-colors">Amount (₹)</label>
             <input type="number" required min="0.01" step="0.01" placeholder="0.00"
               className="w-full border dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-400 rounded-md px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 outline-none transition-all duration-200 hover:border-slate-400 dark:hover:border-slate-500"
               value={formData.amount} onChange={e => setFormData({...formData, amount: e.target.value})} />

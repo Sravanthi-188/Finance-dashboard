@@ -155,7 +155,7 @@ export default function TransactionsTab({ role, transactions, setTransactions })
                   </span>
                 </td>
                 <td className={`px-6 py-4 text-right whitespace-nowrap font-medium ${tx.type === 'income' ? 'text-green-600 dark:text-green-400' : 'text-slate-900 dark:text-white'}`}>
-                  {tx.type === 'income' ? '+' : '-'}${Math.abs(tx.amount).toLocaleString(undefined, {minimumFractionDigits: 2})}
+                  {tx.type === 'income' ? '+' : '-'}₹{Math.abs(tx.amount).toLocaleString('en-IN', {minimumFractionDigits: 2})}
                 </td>
                 {role === 'admin' && (
                   <td className="px-6 py-4 text-center">

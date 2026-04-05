@@ -31,7 +31,7 @@ export default function InsightsTab({ transactions }) {
                 <span className="text-sm font-semibold uppercase tracking-wider">Top Expense</span>
               </div>
               <div className="text-red-900 dark:text-red-300 font-medium mb-1 transition-colors">{topCategory}</div>
-              <div className="text-3xl font-bold text-red-700 dark:text-red-400 transition-colors">${topAmount.toLocaleString()}</div>
+              <div className="text-3xl font-bold text-red-700 dark:text-red-400 transition-colors">₹{topAmount.toLocaleString('en-IN')}</div>
             </div>
             
             <div className="bg-blue-50 dark:bg-blue-900/10 p-5 rounded-xl border border-blue-100 dark:border-blue-900/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
@@ -40,7 +40,7 @@ export default function InsightsTab({ transactions }) {
                 <span className="text-sm font-semibold uppercase tracking-wider">Avg Transaction</span>
               </div>
               <div className="text-blue-900 dark:text-blue-300 font-medium mb-1 transition-colors">Per Expense Entry</div>
-              <div className="text-3xl font-bold text-blue-700 dark:text-blue-400 transition-colors">${avgTransaction}</div>
+              <div className="text-3xl font-bold text-blue-700 dark:text-blue-400 transition-colors">₹{avgTransaction}</div>
             </div>
 
             <div className="bg-green-50 dark:bg-green-900/10 p-5 rounded-xl border border-green-100 dark:border-green-900/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-md">

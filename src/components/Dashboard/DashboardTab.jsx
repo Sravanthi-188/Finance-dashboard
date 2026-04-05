@@ -1,4 +1,3 @@
-// src/components/Dashboard/DashboardTab.jsx
 import React, { useMemo } from 'react';
 import { TrendingUp, TrendingDown } from 'lucide-react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
@@ -41,7 +40,7 @@ export default function DashboardTab({ transactions, isDark }) {
     <div className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
         <div className="animate-fade-in" style={{ animationDelay: '0ms' }}>
-          <SummaryCard title="Total Balance" amount={balance} icon="$" color={balance >= 0 ? "text-slate-900 dark:text-white" : "text-red-600 dark:text-red-400"} bg="bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400" />
+          <SummaryCard title="Total Balance" amount={balance} icon="₹" color={balance >= 0 ? "text-slate-900 dark:text-white" : "text-red-600 dark:text-red-400"} bg="bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400" />
         </div>
         <div className="animate-fade-in" style={{ animationDelay: '100ms' }}>
           <SummaryCard title="Total Income" amount={totalIncome} icon={<TrendingUp size={20} />} color="text-green-600 dark:text-green-400" bg="bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400" />
@@ -60,10 +59,10 @@ export default function DashboardTab({ transactions, isDark }) {
                 <LineChart data={chartData}>
                   <CartesianGrid strokeDasharray="3 3" vertical={false} stroke={isDark ? '#334155' : '#e2e8f0'} />
                   <XAxis dataKey="date" axisLine={false} tickLine={false} tick={{fill: isDark ? '#94a3b8' : '#64748b', fontSize: 12}} dy={10} />
-                  <YAxis axisLine={false} tickLine={false} tick={{fill: isDark ? '#94a3b8' : '#64748b', fontSize: 12}} dx={-10} tickFormatter={v => `$${v}`} />
+                  <YAxis axisLine={false} tickLine={false} tick={{fill: isDark ? '#94a3b8' : '#64748b', fontSize: 12}} dx={-10} tickFormatter={v => `₹${v}`} />
                   <Tooltip 
                     contentStyle={{backgroundColor: isDark ? '#1e293b' : '#fff', color: isDark ? '#f8fafc' : '#0f172a', borderRadius: '8px', border: isDark ? '1px solid #334155' : 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)'}}
-                    formatter={(value) => [`$${value.toLocaleString()}`, 'Balance']}
+                    formatter={(value) => [`₹${value.toLocaleString('en-IN')}`, 'Balance']}
                   />
                   <Line type="monotone" dataKey="balance" stroke="#3b82f6" strokeWidth={3} dot={{ r: 4, strokeWidth: 2, fill: isDark ? '#1e293b' : '#fff' }} activeDot={{ r: 6 }} animationDuration={1000} />
                 </LineChart>
@@ -82,7 +81,7 @@ export default function DashboardTab({ transactions, isDark }) {
                     {pieData.map((entry, index) => <Cell key={`cell-${index}`} fill={entry.color} />)}
                   </Pie>
                   <Tooltip 
-                    formatter={(value) => `$${value.toLocaleString()}`}
+                    formatter={(value) => `₹${value.toLocaleString('en-IN')}`}
                     contentStyle={{backgroundColor: isDark ? '#1e293b' : '#fff', color: isDark ? '#f8fafc' : '#0f172a', borderRadius: '8px', border: isDark ? '1px solid #334155' : 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)'}}
                   />
                 </PieChart>

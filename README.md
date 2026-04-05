@@ -3,7 +3,7 @@
 A modern, interactive financial dashboard built as a frontend interface for tracking and understanding financial activity. Designed with clean architecture, responsive UI, and persistent state management.
 
 ## 🚀 Live Demo
-[View Live Dashboard](https://Sravanthi-188.github.io/Finance-dashboard/)
+[View Live Dashboard](https://finance-dashboard-lemon-mu.vercel.app/)
 
 ## ✨ Key Features
 

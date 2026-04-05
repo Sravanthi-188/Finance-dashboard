@@ -1,16 +1,38 @@
-# React + Vite
+# Finance Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, interactive financial dashboard built as a frontend interface for tracking and understanding financial activity. Designed with clean architecture, responsive UI, and persistent state management.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
+[View Live Dashboard](https://Sravanthi-188.github.io/Finance-dashboard/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Key Features
 
-## React Compiler
+* **Dashboard Overview:** Visualizes total balance, income, and expenses with dynamic charts using Recharts.
+* **Transactions Management:** View, search, filter, sort, and add new transactions. Includes functionality to delete records.
+* **Data Insights:** Analyzes spending patterns, highlights top expenses, and provides smart financial observations.
+* **Role-Based UI:** Toggles between 'Admin' (full CRUD access) and 'Viewer' (read-only/export access) modes to demonstrate basic RBAC behavior.
+* **Dark/Light Mode:** System-integrated theme toggle with smooth transitions.
+* **Data Persistence:** Automatically saves and retrieves transaction data and theme preferences using browser `localStorage`.
+* **Export Functionality:** Download current transaction history as a CSV file.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🏗️ Architecture & Approach
 
-## Expanding the ESLint configuration
+To ensure maintainability, scalability, and technical quality, the application is structured into modular components rather than a single monolithic file:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* **Component Modularity:** UI is divided into feature-specific folders (`Dashboard`, `Transactions`, `Insights`, `Layout`, `Shared`).
+* **State Management:** Utilizes standard React Hooks (`useState`, `useEffect`) combined with `localStorage`. `useMemo` is heavily used to optimize performance by preventing unnecessary recalculations during filtering, sorting, and chart rendering.
+* **Styling:** Tailwind CSS is used for utility-first, fully responsive design ensuring adaptability across all screen sizes.
+* **Animation:** Custom Tailwind keyframes are utilized to provide smooth, intuitive feedback (e.g., fade-ins, hover states) without heavy external animation libraries.
+
+## 🛠️ Tech Stack
+
+* **Framework:** React (Bootstrapped with Vite)
+* **Styling:** Tailwind CSS
+* **Data Visualization:** Recharts
+* **Icons:** Lucide React
+
+## 💻 Local Setup Instructions
+
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/Sravanthi-188/Finance-dashboard.git](https://github.com/Sravanthi-188/Finance-dashboard.git)
